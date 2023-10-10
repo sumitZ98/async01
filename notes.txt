@@ -1,0 +1,34 @@
+Asynchronous JS
+Demo ASYNC code:
+Console.log(1);
+Console.log(2);
+setTimeout(()=> {
+console.log("Callback funtion");
+},2000);
+Console.log(3);
+Console.log(4);
+
+HTTP request
+it is used to get data from another data point
+
+we make this request to API end points
+https://jsonplaceholder.typicode.com/
+
+making HTTP request....
+
+const req = new XMLHttpRequest();
+
+req .addeventlistener('readystatechange', () => {
+console.log(req, req.readyState);
+if(req.readyState === 4 && req.status === 200){
+console.log(req.responseText);
+} else if(req.readystate === 4 ){
+console.log("could not fetch the data");
+}
+
+})
+req.open('GET', 'api end points');
+req.send();
+
+
+
